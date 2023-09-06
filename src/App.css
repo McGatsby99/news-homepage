@@ -21,6 +21,28 @@
 --border-orange: 2px solid orange;
 --border-green: 2px solid green;
 
+}
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.app-container{
+  padding: 20px;
+  border: var(--border-green);
+}
+
+header{
+  margin-bottom: 20px;
+}
 
 
+.menu{
+  float: right;
+}
+
+.web3-mobile{
+  width: 100%;
 }
