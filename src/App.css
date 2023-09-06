@@ -43,6 +43,27 @@ header{
   float: right;
 }
 
+.grid-item{
+  margin-bottom: 10px;
+}
+
 .web3-mobile{
   width: 100%;
+}
+
+.bigger-fontSize{
+  font-size: 50px;
+}
+
+.read-more p {
+  /* line-spacing??? */
+  margin-bottom: 30px;
+}
+
+.read-more a{
+  background-color: var(--soft-red);
+  color: var(--off-white);
+  padding: 10px 20px;
+  border-radius: 0px;
+  cursor: pointer;
 }

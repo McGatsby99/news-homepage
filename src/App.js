@@ -12,9 +12,13 @@ function App() {
         <img className='menu' src={menu} alt="menu icon" width={30}/>
       </header>
       <div className="content grid-container">
-        <div className="grid-item web3-image">
-          <img className='web3-mobile' src={web3Mobile} alt="web 3 image"/>
-        </div>
+          <img className='web3-mobile grid-item' src={web3Mobile} alt="web 3 image"/>
+          <h1 className='bigger-fontSize grid-item'>The Bright Future of Web 3.0?</h1>
+          <div className="read-more grid-item">
+            <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+  But is it really fulfilling its promise?</p>
+            <a>READ MORE</a>
+          </div>
       </div>
     </div>
   );
