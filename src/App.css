@@ -29,10 +29,13 @@
   margin: 0;
 }
 
+/* mobile first design */
+/* ------------------------------- */
+
 /* Utility classes */
 
 .bigger-fontSize{
-  font-size: 50px;
+  font-size: 3rem;
 }
 
 body{
@@ -54,6 +57,11 @@ header{
 .menuIcon{
   float: right;
   cursor: pointer;
+}
+
+.pressed{
+  rotate: 90deg;
+  transition: rotate 0.9s;
 }
 
 .grid-item{
@@ -85,7 +93,8 @@ header{
 
 
 
-/* newTech */
+/* newTech component */
+/* --------------------------- */
 
 .newTech-container{
   background-color: var(--very-dark-blue);
@@ -101,6 +110,13 @@ header{
 .content-box h1{
   color: var(--soft-orange);
   margin-bottom: 30px;
+}
+
+.content-box .tech-articles{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: var(--border-green);
 }
 
 
@@ -125,12 +141,14 @@ header{
   margin-bottom: 30px;
 }
 
-/* hardware review */
+/* hardware review component */
+/* --------------------------------- */
 
 article{
   display: flex;
   margin-bottom: 30px;
   gap: 10px;
+  max-height: 120px;
 }
 
 article img{
@@ -153,15 +171,22 @@ article h3:hover{
   color: var(--soft-red);
 }
 
+/* article .info{
+  overflow: hidden;
+  max-height: 120px;
+} */
+
 article p{
   color: var(--grayish-blue);
+  font-size: 1rem;
 }
 
 .bigger-margin{
   margin-bottom: 50px;
 }
 
-/* menu */
+/* pop up menu */
+/* --------------------------------- */
 
 nav{
   text-decoration: none;
@@ -170,7 +195,7 @@ nav{
 
 .menu{
   position: fixed;
-  right: -3000px;
+  right: -5000px;
   top: 0;
   z-index: 1000;
   width: 60%;
@@ -178,11 +203,16 @@ nav{
   background-color: white;
   border: 1px solid var(--off-white);
   padding: 20px;
-  transition: right 1s;
+  /* visibility: hidden; */
+  transition: right 2s;
+  /* transition: visibility 0.5s; */
+
 }
 
 .displayMenu{
+  /* visibility: visible; */
   right: 0;
+  transition: right 2s;
 }
 
 .menu img{
@@ -211,3 +241,80 @@ nav{
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+/* desktop design */
+/* ------------------------------ */
+
+@media (min-width: 500px) {
+
+  .app-container{
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .bigger-margin{
+    margin-bottom: 0;
+  }
+
+  .grid-container{
+    display: grid;
+    grid-template-areas: 
+    'img img newTech'
+    'headline readMore newTech'
+    'article1 article2 article3'
+    ;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .web3-mobile{
+    grid-area: img;
+  }
+
+  .newTech-container{
+    grid-area: newTech;
+  }
+
+  .bigger-fontSize{
+    grid-area: headline;
+  }
+
+  .read-more{
+    grid-area: readMore;
+  }
+
+  /* .computers{
+    display: flex;
+  } */
+
+  /* .computers{
+    grid-area: hardware;
+    display: grid;
+    grid-template-areas: 
+    'one two three'
+    ;
+    gap: 20px;
+  } */
+
+  .one{
+    grid-area: article1;
+  }
+
+  .two{
+    grid-area: article2;
+  }
+  .three{
+    grid-area: article3;
+  }
+
+  article img{
+    height: 200px;
+  }
+
+  /* article .info{
+    overflow: hidden;
+    max-height: 180px;
+  } */
+
+
+}

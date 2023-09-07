@@ -4,8 +4,8 @@ import gaming from '../assets/images/image-gaming-growth.jpg'
 
 const HardwareReview = () => {
   return (
-    <div className="computers grid-item">
-              <article>
+    <>
+              <article className='one'>
                 <img src={retroPC} alt="retro PCs" width={120}/>
                 <div className="info">
                   <h2>01</h2>
@@ -13,7 +13,7 @@ const HardwareReview = () => {
                   <p>What happens when old PCs are given modern upgrades?</p>
                 </div>
               </article>
-              <article>
+              <article className='two'>
                 <img src={laptop} alt="laptop" width={120}/>
                 <div className="info">
                   <h2>02</h2>
@@ -21,7 +21,7 @@ const HardwareReview = () => {
                   <p>Our best picks for various needs and budgets.</p>
                 </div>
               </article>
-              <article>
+              <article className='three'>
                 <img src={gaming} alt="gaming console" width={120}/>
                 <div className="info">
                   <h2>03</h2>
@@ -29,7 +29,7 @@ const HardwareReview = () => {
                   <p>How the pandemic has sparked fresh opportunities.</p>
                 </div>
               </article>
-            </div>
+            </>
   )
 }
 

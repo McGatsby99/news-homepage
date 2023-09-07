@@ -29,7 +29,7 @@ function App() {
         <header>
           <img src={logo} alt="log" width={30}/>
           <img 
-            className='menuIcon' 
+            className={`menuIcon ${showMenu? 'pressed': ''}`} 
             src={menu} 
             alt="menu icon" 
             onClick={() => setShowMenu(!showMenu)}
