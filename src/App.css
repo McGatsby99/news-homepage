@@ -24,32 +24,30 @@
 }
 
 *{
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-/* mobile first design */
+/* mobile/tablet first design */
 /* ------------------------------- */
 
 /* Utility classes */
 
-.bigger-fontSize{
-  font-size: 3rem;
-}
-
 body{
   font-family: 'Inter', sans-serif;
+  color: var(--very-dark-blue);
 }
 
 
 header{
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 
 .app-container{
-  padding: 30px;
+  padding: 2rem;
+  background-color: var(--off-white);
   /* border: var(--border-green); */
 }
 
@@ -65,26 +63,44 @@ header{
 }
 
 .grid-item{
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
-.web3-mobile{
+.web3-img{
   width: 100%;
+  height: 100%;
+  /* object-fit: contain; */
+}
+
+.headline{
+  font-size: 3.0rem;
+  margin: 2rem 0;
+}
+
+.read-more{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
 .read-more p {
   line-height: 1.4;
-  margin-bottom: 20px;
+  /* margin-bottom: 1.8rem ; */
+  /* font-size: 1.0rem; */
+  color: var(--dark-grayish-blue);
 }
 
 .read-more a{
   display: inline-block;
+  width: 150px;
   background-color: var(--soft-red);
   color: white;
-  padding: 10px 20px;
+  padding: 1rem 1.25rem;
   cursor: pointer;
   text-decoration: none;
+  letter-spacing: 2px;
+  transition: background-color 0.5s ease-in-out;
 }
 
 .read-more a:hover{
@@ -100,84 +116,88 @@ header{
   background-color: var(--very-dark-blue);
   color: white;
   border: 1px solid var(--very-dark-blue);
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
 }
 
 .content-box{
-  margin: 10px;
+  margin: 0.75rem;
 }
 
 .content-box h1{
   color: var(--soft-orange);
-  margin-bottom: 30px;
+  margin-bottom: 1.2rem;
 }
 
 .content-box .tech-articles{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border: var(--border-green);
+  /* border: var(--border-green); */
 }
 
 
-.content-box section{
-  margin-bottom: 30px;
+.content-box article{
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--dark-grayish-blue);
+  padding-bottom: 2rem;
 }
 
-.content-box section h3{
+.content-box article:last-child{
+  margin-bottom: 0.5rem;
+  border-bottom: none;
+  padding-bottom: 0.3rem;
+}
+
+.content-box article h3{
   margin-bottom: 10px;
   cursor: pointer;
 }
 
-.content-box section h3:hover{
+.content-box article h3:hover{
   color: var(--soft-orange);
 }
 
-.content-box section p{
-  color: var(--off-white);
+.content-box article p{
+  color: var(--grayish-blue);
 }
 
-.content-box hr{
-  margin-bottom: 30px;
-}
 
 /* hardware review component */
 /* --------------------------------- */
 
-article{
+.hardware-articles{
   display: flex;
-  margin-bottom: 30px;
-  gap: 10px;
+  margin-bottom: 2rem;
+  gap: 0.6rem;
   max-height: 120px;
 }
 
 article img{
-  height: 120px;
+  height: 130px;
+  aspect-ratio: 1/1;
 }
 
 
 article h2{
   color: var(--grayish-blue);
-  margin-bottom: 10px;
+  margin: 0.2rem 0;
 }
 
 
 article h3{
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   cursor: pointer;
 }
+
+
 
 article h3:hover{
   color: var(--soft-red);
 }
 
-/* article .info{
-  overflow: hidden;
-  max-height: 120px;
-} */
 
 article p{
-  color: var(--grayish-blue);
+  color: var(--dark-grayish-blue);
   font-size: 1rem;
 }
 
@@ -239,17 +259,27 @@ nav{
 
 /* attribution */
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+  margin: 3rem 0;
+}
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
 
 /* desktop design */
 /* ------------------------------ */
 
-@media (min-width: 500px) {
+@media (min-width: 780px) {
 
   .app-container{
     margin: 30px auto;
     max-width: 900px;
+  }
+
+  .grid-item{
+    margin: 0;
   }
 
   .bigger-margin{
@@ -267,7 +297,7 @@ nav{
     gap: 20px;
   }
 
-  .web3-mobile{
+  .web3-picture{
     grid-area: img;
   }
 
@@ -277,24 +307,12 @@ nav{
 
   .bigger-fontSize{
     grid-area: headline;
+    font-size: 3.8rem;
   }
 
   .read-more{
     grid-area: readMore;
   }
-
-  /* .computers{
-    display: flex;
-  } */
-
-  /* .computers{
-    grid-area: hardware;
-    display: grid;
-    grid-template-areas: 
-    'one two three'
-    ;
-    gap: 20px;
-  } */
 
   .one{
     grid-area: article1;
@@ -308,13 +326,83 @@ nav{
   }
 
   article img{
-    height: 200px;
+    height: 180px;
   }
 
-  /* article .info{
-    overflow: hidden;
-    max-height: 180px;
-  } */
+  /* navbar */
+  /* ------------------------------------ */
 
+  .menuIcon{
+    display: none;
+  }
+
+  .menu img{
+    display: none;
+  }
+  
+
+  nav{
+    text-decoration: none;
+    position: relative;
+  }
+
+  header{
+    display: flex;
+    justify-content: space-between;
+    /* border: var(--border-green); */
+  }
+
+  header img{
+    width: 60px;
+    height: 40px;
+  }
+  
+  .menu{
+    position: static;
+    display: inline-block;
+    /* position: fixed; */
+    /* right: -5000px;
+    top: 0; */
+    z-index: 0;
+    border: var(--border-blue);
+    width: auto;
+    height: auto;
+    background-color: var(--off-white);
+    border: 1px solid var(--off-white);
+    padding: 20px;
+    /* visibility: hidden; */
+    transition: right 2s;
+    /* transition: visibility 0.5s; */
+  
+  }
+  
+  .displayMenu{
+    /* visibility: visible; */
+    right: 0;
+    transition: right 2s;
+  }
+  
+  .menu img{
+    /* border: var(--border-green); */
+    float: right;
+    cursor: pointer;
+  }
+  
+  
+  .menu ul{
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-around;
+    color: var(--dark-grayish-blue);
+    /* border: var(--border-red); */
+  }
+  
+  .menu ul li{
+    list-style: none;
+    margin: 0rem 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
 
 }

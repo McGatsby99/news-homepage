@@ -6,6 +6,7 @@ import menu from './assets/images/icon-menu.svg'
 
 //web 3 image
 import web3Mobile from './assets/images/image-web-3-mobile.jpg'
+import web3Desktop from './assets/images/image-web-3-desktop.jpg' 
 
 //components
 import NewTech from './components/NewTech';
@@ -34,15 +35,20 @@ function App() {
             alt="menu icon" 
             onClick={() => setShowMenu(!showMenu)}
             width={30}/>
+            <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
         </header>
-        <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
+        
 
       </nav>
 
       <div className="content grid-container">
-          <img className='web3-mobile grid-item' src={web3Mobile} alt="web 3"/>
+          <picture className='web3-picture grid-item'>
+            <source className='web3-img' srcset={web3Desktop} media='(min-width:760px)'/>
+            <img className='web3-img' src={web3Mobile} alt="web 3"/>
+            
+          </picture>
 
-          <h1 className='bigger-fontSize grid-item'>The Bright Future of Web 3.0?</h1>
+          <h1 className='headline grid-item'>The Bright Future of Web 3.0?</h1>
           <ReadMore />
           <NewTech />
           <HardwareReview />
